@@ -47,6 +47,12 @@ Welcome to Argon!
 1
 > (cdr x)
 (2 3)
+> (cons 1 2)
+(1 . 2)
+> (cons 1 (cons 2 null))
+(1 2)
+> (cons 1 (cons 2 (quote ())))
+(1 2)
 > (if #t 1 2)
 1
 > (if #f 1 2)
