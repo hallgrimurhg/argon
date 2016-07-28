@@ -45,11 +45,7 @@ public class Parser {
       case SYMBOL:
         return new Symbol(atom.getValue());
       case BOOLEAN:
-        if (atom.getValue().equals("#f")) {
-          return false;
-        } else {
-          return true;
-        }
+        return atom.getValue().equals("#t");
     }
     return null;
   }
