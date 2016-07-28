@@ -19,7 +19,7 @@ Argon supports the following data types:
 - Lists, e.g. `(10 20 30)`
 - Empty list, denoted by `()` or `null`
 
-## Examples
+## Example usage
 
 ```scheme
 Welcome to Argon!
@@ -47,4 +47,12 @@ Welcome to Argon!
 1
 > (cdr x)
 (2 3)
+> (if #t 1 2)
+1
+> (if #f 1 2)
+2
+> (if (< 1 2) 10 20)
+10
+> (cond (#f 1) (#t 2) (#f 3))
+2
 ```
