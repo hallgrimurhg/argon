@@ -91,4 +91,9 @@ public class Argon {
     // Everything else is considered true.
     return true;
   }
+
+  public static long integer(Object x) {
+    if (x instanceof Long) return (long)x;
+    throw new IllegalArgumentException("not an integer: " + x);
+  }
 }

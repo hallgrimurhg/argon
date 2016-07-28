@@ -6,7 +6,7 @@ public abstract class BuiltinFunction extends Function {
     public Object apply(Object args) {
       long result = 0;
       while (args != null) {
-        result += (long)Pair.first(args);
+        result += Argon.integer(Pair.first(args));
         args = Pair.rest(args);
       }
       return result;
@@ -16,10 +16,10 @@ public abstract class BuiltinFunction extends Function {
   public static final Function MINUS = new BuiltinFunction("-") {
     @Override
     public Object apply(Object args) {
-      long value = (long)Pair.first(args);
+      long value = Argon.integer(Pair.first(args));
       Object p = Pair.rest(args);
       while (p != null) {
-        value -= (long)Pair.first(p);
+        value -= Argon.integer(Pair.first(p));
         p = Pair.rest(p);
       }
       return value;
@@ -29,8 +29,8 @@ public abstract class BuiltinFunction extends Function {
   public static final Function LT = new BuiltinFunction("<") {
     @Override
     public Object apply(Object args) {
-      long a = (long)Pair.first(args);
-      long b = (long)Pair.second(args);
+      long a = Argon.integer(Pair.first(args));
+      long b = Argon.integer(Pair.second(args));
       return a < b;
     }
   };
@@ -38,8 +38,8 @@ public abstract class BuiltinFunction extends Function {
   public static final Function EQUALS = new BuiltinFunction("=") {
     @Override
     public Object apply(Object args) {
-      long a = (long)Pair.first(args);
-      long b = (long)Pair.second(args);
+      long a = Argon.integer(Pair.first(args));
+      long b = Argon.integer(Pair.second(args));
       return a == b;
     }
   };
