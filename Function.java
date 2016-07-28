@@ -3,7 +3,6 @@ package argon;
 public abstract class Function implements Evaluator {
   @Override
   public Object eval(Object args, Environment env) {
-
     Pair head = new Pair();
     Pair last = head;
 
