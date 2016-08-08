@@ -40,6 +40,11 @@ public class Pair {
     return first(rest(rest(x)));
   }
 
+  public static boolean isEmpty(Object x) {
+    if (x == null) return true;
+    return first(x) == null && rest(x) == null;
+  }
+
   @Override
   public String toString() {
     if (head == null && tail == null) {

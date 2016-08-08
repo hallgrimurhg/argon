@@ -87,6 +87,8 @@ public class Argon {
   }
 
   public static boolean bool(Object x) {
+    if (x == null) return false;
+    if (x instanceof Pair && Pair.isEmpty(x)) return false;
     if (x instanceof Boolean) return x == Boolean.TRUE;
     // Everything else is considered true.
     return true;
