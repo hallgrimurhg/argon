@@ -15,6 +15,7 @@ public class Parser {
     lexer.advance();
     if (!lexer.eof() && lexer.peek().getType() == Token.Type.RPAREN) {
       // Empty list
+      lexer.advance();
       return null;
     }
     Pair head = new Pair();
