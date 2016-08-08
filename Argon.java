@@ -59,11 +59,7 @@ public class Argon {
     }
 
     Object f = eval(Pair.first(x), env);
-    if (!(f instanceof Evaluator)) {
-      throw new IllegalArgumentException("not a procedure: " + Pair.first(x));
-    }
-
-    Evaluator ev = (Evaluator)f;
+    Evaluator ev = evaluator(f);
     return ev.eval(Pair.rest(x), env);
   }
 
@@ -79,6 +75,11 @@ public class Argon {
     } else {
       writer.println(x);
     }
+  }
+
+  public static Evaluator evaluator(Object x) {
+    if (x instanceof Evaluator) return (Evaluator)x;
+    throw new IllegalArgumentException("not a procedure: " + x);
   }
 
   public static Symbol symbol(Object x) {
