@@ -10,3 +10,10 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+
+# Bazel output
+bazel-argon
+bazel-bin
+bazel-genfiles
+bazel-out
+bazel-testlogs
