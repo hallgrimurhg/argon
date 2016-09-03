@@ -39,6 +39,7 @@ public class Lexer {
     while (Character.isWhitespace(reader.peek())) {
       reader.read();
     }
+    if (reader.eof()) throw new IllegalStateException("no more tokens");
     char c = reader.peek();
     if (c == '(') {
       reader.read();
