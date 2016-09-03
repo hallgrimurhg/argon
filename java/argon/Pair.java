@@ -24,6 +24,16 @@ public class Pair {
     return p;
   }
 
+  public static int length(Object x) {
+    int n = 0;
+    while (x != null) {
+      n++;
+      x = rest(x);
+    }
+
+    return n;
+  }
+
   public static Object first(Object x) {
     return x instanceof Pair ? ((Pair)x).head : null; 
   }
